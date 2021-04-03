@@ -1,8 +1,24 @@
-<% if user_signed_in? %>
-  <%= link_to "アカウント編集", edit_user_registration_path %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <%= "【ログイン中のアドレス】#{current_user.email}" %>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+<header>
+  <nav class="navbar navbar-expand navbar-light">
+    <%= link_to "Deviseサンプル", root_path, class: 'navbar-brand' %>
+    <div id="Navber">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          </li>
+      <% else %>
+          <li class="nav-item active">
+            <%= link_to "新規登録", new_user_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>
