@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GuestLoginFunction</title>
+    <title>ゲストログイン機能</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+      <%= render 'layouts/flash' %>
+    <hr>
+    <div class="container-fluid py-4 mw-md">
+      <%= yield %>
+    </div>
   </body>
 </html>
